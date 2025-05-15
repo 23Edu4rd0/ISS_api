@@ -26,7 +26,7 @@ class ISSComparator:
         my_lat, my_lon = self.get_my_location()
 
         if (
-            iss_lat and 
+            iss_lat and
             iss_lon and
             my_sunrise and
             my_sunset
@@ -51,5 +51,3 @@ class ISSComparator:
                 return True
             else:
                 return False
-            
-            
