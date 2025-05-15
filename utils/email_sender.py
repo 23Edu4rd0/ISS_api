@@ -8,7 +8,7 @@ class EmailSender:
         # Configurações do servidor SMTP (exemplo para Gmail)
         smtp_server = 'smtp.gmail.com'
         smtp_port = 587
-        from_email = 'eduardo.vchaves23@gmail.com'  
+        from_email = 'eduardo.vchaves23@gmail.com'
         password = 'wyke nuwv cisw ivum'
 
         msg = EmailMessage()
@@ -65,4 +65,3 @@ class EmailSender:
             )
             print('Deu ruim, mas e-mail enviado com a posição da ISS')
             return False
-
