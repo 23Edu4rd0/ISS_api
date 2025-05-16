@@ -45,23 +45,5 @@ class EmailSender:
             print('Email enviado com sucesso!')
             return True
         else:
-            html = f"""
-            <html>
-                <body>
-                    <h1>ISS NÃO visível</h1>
-                    <p>A ISS não está visível no momento.</p>
-                    <p>Posição atual da ISS:</p>
-                    <ul>
-                        <li>Latitude: {iss_lat}</li>
-                        <li>Longitude: {iss_lon}</li>
-                    </ul>
-                </body>
-            </html>
-            """
-            self.send_email(
-                subject="A ISS NÃO está visível",
-                html_content=html,
-                to_email="23eduardoviana@gmail.com"
-            )
-            print('Deu ruim, mas e-mail enviado com a posição da ISS')
+            print('A ISS não está visivel no momento.')
             return False
