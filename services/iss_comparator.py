@@ -16,7 +16,7 @@ class ISSComparator:
         lon = self.iss.get_iss_longitude(location)
         return lat, lon
 
-    def get_sun_times(self):
+    def get_sunrise_sunset(self):
         return self.my_location.get_sunrise(), self.my_location.get_sunset()
 
     def get_my_location(self):
@@ -45,7 +45,7 @@ class ISSComparator:
             False caso contrário.
         """
         iss_lat, iss_lon = self.get_iss_data()
-        my_sunrise, my_sunset = self.get_sun_times()
+        my_sunrise, my_sunset = self.get_sunrise_sunset()
         my_lat, my_lon = self.get_my_location()
 
         if (

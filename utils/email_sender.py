@@ -8,8 +8,8 @@ class EmailSender:
         # Configurações do servidor SMTP (exemplo para Gmail)
         smtp_server = 'smtp.gmail.com'
         smtp_port = 587
-        from_email = 'SEU EMAIL AQUI'
-        password = 'SUA SENHA AQUI'  # lembre de usar senha de app aqui
+        from_email = 'eduardosecundario72@gmail.com'
+        password = 'enjj eioe pftr ihwc'  # lembre de usar senha de app aqui
 
         msg = EmailMessage()
         msg['Subject'] = subject
@@ -40,10 +40,11 @@ class EmailSender:
             self.send_email(
                 subject="A ISS está visível!",
                 html_content=html,
-                to_email="EMAIL DESTINO AQUI"
+                to_email="eduardo.vchaves23@gmail.com"
             )
             print('Email enviado com sucesso!')
             return True
         else:
-            print('A ISS não está visivel no momento.')
+            print(f'A ISS não está visível no momento, ela esta na posição:\n'
+                  f'latitude: {iss_lat} , longitude: {iss_lon}.')
             return False
