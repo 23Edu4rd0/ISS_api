@@ -7,6 +7,8 @@ class ISSComparator:
     def __init__(self, my_lat: float = -20.140373, my_lon: float = -44.868309):
         self.my_location = MyLocation(my_lat, my_lon)
         self.iss = IssLocation()
+        self.my_lat = my_lat
+        self.my_lon = my_lon
 
     def get_iss_data(self):
         location = self.iss.get_iss_location()
