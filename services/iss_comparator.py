@@ -18,9 +18,30 @@ class ISSComparator:
         return self.my_location.get_sunrise(), self.my_location.get_sunset()
 
     def get_my_location(self):
-        return self.my_location.latitude, self.my_location.longitude
+        return self.my_lat, self.my_lon
 
     def compare(self, proximity_deg: float = 5.0):
+        """
+        Compara a localização da ISS com a localização do usuário.
+
+        Args:
+            proximity_deg (float, optional): Diferença máxima (em graus)
+            permitida entre a latitude e longitude da ISS e a do usuário para
+            considerar que a ISS está "próxima" da sua localização.
+            O valor padrão é 5.0 porque, devido à altitude da ISS (~400 km)
+            e ao seu brilho intenso, ela pode ser vista a olho nu
+            em uma área relativamente ampla do céu,
+            mesmo que não esteja exatamente sobre a sua cidade.
+            Esse valor é uma escolha comum em projetos e sites de rastreamento
+            da ISS para balancear precisão e praticidade:
+            valores maiores tornam o critério mais permissivo
+            (considerando a ISS visível em uma área maior),
+            enquanto valores menores tornam o critério mais restrito.
+
+        Returns:
+            bool: True se a ISS estiver próxima e for noite.
+            False caso contrário.
+        """
         iss_lat, iss_lon = self.get_iss_data()
         my_sunrise, my_sunset = self.get_sun_times()
         my_lat, my_lon = self.get_my_location()
